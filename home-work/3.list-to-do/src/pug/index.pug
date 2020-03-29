@@ -1,0 +1,17 @@
+extends 1-layout/_layout
+block content
+  .container
+    h1 Page listing
+    -
+      var pages = [
+        { src: 'dashboard', name: ' dashboard'},
+        { src: 'listtodo', name: 'listtodo'},
+         { src: 'listtodo_download', name: ' listtodo_download'}
+      ];
+    ul
+      each page, index in pages
+        li: a(href=page.src + '.html', title=page.name, style="font-size: 1.6rem; color: black;")
+          | #{index + 1}.
+          if page.parent
+            | [#{page.parent}] -
+          | #{page.name}

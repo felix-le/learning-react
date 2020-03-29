@@ -1,0 +1,19 @@
+extends 1-layout/_layout
+block content
+  include ./3-mixins/_mixins.pug
+  .container
+    .wrapper-content-box
+      h1.title-box Get Sh*t Done:
+      .wrapper-list-todo
+        form(onsubmit="return false")
+          // onsubmit not refresh page
+          +checkbox('walk the dog')
+          +checkbox('order pizza')
+          +checkbox('edit README file')
+          +checkbox('go to gym')
+          .checkbox.insert-task-wrapper
+            input(id="insert-value" type="text", name="insert-task" placeholder="Inseart task and Hint Enter.").insert-task
+          .checkbox.btn-check
+            input#checkall1(type='button' value='Check All completed').btn-block 
+      
+

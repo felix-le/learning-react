@@ -1,0 +1,18 @@
+{
+  "vietanh":  [
+    {
+      "id": 1,
+      "title": "va-1"
+    },
+    {
+      "id": 2,
+      "title": "va-2"
+    }
+  ],
+  "truong": [
+    {
+      "id": 1,
+      "title": "start"
+    }
+  ]
+}

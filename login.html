@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+        content="Free Web tutorials">
+  <meta name="keywords"
+        content="HTML,CSS,XML,JavaScript">
+  <meta name="author"
+        content="John Doe">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        type="text/css"
+        href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="wrapper-all">
+        <section class="login">
+          <form method="POST"
+                onsubmit="submit()"
+                id="login-form">
+            <input id="username"
+                   type="text"
+                   placeholder="user name"
+                   name="user"
+                   class="login-field login-input">
+            <input type="text"
+                   id="password"
+                   placeholder="password"
+                   name="password"
+                   class="login-field login-input">
+            <button id="button"
+                    class="login-field login-button ">
+              login
+            </button>
+          </form>
+          <div class="register">
+            <p><span>Not registered?</span> <a href="#">Creat an account</a></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  var submit = document.getElementById('login-form');
+
+  submit.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    var valueUser = document.getElementById('username').value;
+    var valuePass = document.getElementById('password').value;
+
+    if (valueUser !== '') {
+      sessionStorage.setItem('username', valueUser);
+      window.location.href = 'about.html'
+      console.log(valueUser, valuePass);
+    }
+
+  })
+</script>
+<footer>
+</footer>

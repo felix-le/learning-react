@@ -1,0 +1,10 @@
+.ds_store
+.vscode/
+/node_modules
+/.tmp
+*.error
+*.lock
+*.log
+bower_components
+.sass-cache
+*.css.map

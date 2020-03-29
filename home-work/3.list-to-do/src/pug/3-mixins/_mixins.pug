@@ -1,0 +1,24 @@
+
+mixin divier
+  // divier sidebar
+  hr.sidebar-diver&attributes(attributes)
+  // end divier sidebar
+
+// list item
+
+//- mixin list-item(texttodo, label_content)
+//-   li.list-item&attributes(attributes)
+//-     .wrapper-item-list
+//-       input(type="checkbox" id=label_content)
+//-       .wrapper-label
+//-         label(for=label_content)!= texttodo
+//-       .wrapper-icon
+//-         .icon-cancel.icon-right
+
+mixin checkbox(input_content)
+  //- var input_content!= input_content
+  .checkbox.list-do-item
+    label
+      input.check1(type='checkbox') 
+      | #{input_content}
+    .icon-cancel.icon-right(title="close")

@@ -1,0 +1,97 @@
+*{
+  box-sizing: border-box;
+}
+/* *,:before, :after{
+  box-sizing: border-box;
+}
+html{
+  background-color: white;
+  font-family: 'Open Sans', 'Arial';
+  font-size: 1rem;
+}
+body{
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  background: #f9f9f9;
+  position: relative;
+}
+.container{
+  width: 900px;
+  margin: 0 auto;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+p{
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 300;
+}
+a{
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover{
+  opacity: 0.7;
+}
+.img-svg{
+  width: 100%;
+  height: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+  padding: 0;
+  margin: 0;
+}
+li{
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.no-bullet{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.d-flex{
+  display: flex;
+} */
+
+
+/*  */
+body{
+  background: gray;
+}
+.box-test{
+  background-color: red;
+  width: 300px;
+  height: 300px;
+}
+/* max width, min */
+.para{
+  background-color: yellow;
+  width: 300px;
+  min-width: 200px;
+  max-width: 400px;
+}
+/* box-test-posion */
+
+.position-relative{
+  background-color: red;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  top: 50px;
+}
+.para-position{
+  /* position: absolute; */
+  /* bottom: 0; */
+}
+/*  relative có thể  set vị trí với top/bottom... nhưng vị trí nhận diện ban đầu trên DOM là vẫn còn nguyên tại vị trí
+mặc định theo thứ tự code. Tuy nhiên do ăn vị trí của top/bottom... nên nội dung thì bị đẩy theo giá trị này - khoảng trắng 
+sẽ giữ nguyên (vị trí thứ tự code HTML). CÁi này để chém gió.  */

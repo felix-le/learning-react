@@ -1,0 +1,89 @@
+extends 1-layout/_layout
+block content
+  include ./3-mixins/_mixins.pug
+  //aside bar 
+  .aside-bar-wrapper
+    .aside-bar.bg-gradient-primary.accordion
+      // brand logo
+      a(href="#" title="logo" class="logo_brand")
+        .logo-icon
+          .icon-wink.logo-icon-content
+        .logo-text.d-l-min sb admin <sup>2</sup>
+      // end brand logo
+      +divier
+      ul.list-nav-item
+        // dashboard
+        li.nav-item
+          a(href="#" title="dashboard").nav-link
+            .wrapper-nav-link(style="color:white;")
+              .icon-dashboard.icon-nav-link
+              span Dashboard
+        // END dashboard
+        li
+          +divier
+        li.nav-item
+          .sidebar-heading Interface
+          // components - components
+          a(href="#").nav-link.dropdown 
+            .wrapper-nav-link
+              .icon-generate.icon-nav-link
+              span Components
+              .icon-chevron-right.icon-nav-right-link.d-l-min
+          .collapse-nav-lv2.dropdown-menu.is-hidden
+            .wrapper-nav-l2
+              h6.collapse-header custom components
+              a.collapse-item(href="#") Buttons
+              a.collapse-item(href="#") Cards
+          // END components - components 
+
+          // components - utilities
+          a(href="#").nav-link.dropdown
+            .wrapper-nav-link
+              .icon-wrench1.icon-nav-link
+              span Utilities
+              .icon-chevron-right.icon-nav-right-link.d-l-min
+          .collapse-nav-lv2.dropdown-menu.is-hidden
+            .wrapper-nav-l2
+              h6.collapse-header CUSTOM UTILITIES:
+              a.collapse-item(href="#") Colors
+              a.collapse-item(href="#") Borders
+              a.collapse-item(href="#") Animations
+              a.collapse-item(href="#") Others
+          // END components - components
+        li
+          +divier  
+        li.nav-item
+          .sidebar-heading addons
+          // components - Addons
+          a(href="#").nav-link.dropdown 
+            .wrapper-nav-link
+              .icon-folder.icon-nav-link
+              span Pages
+              .icon-chevron-right.icon-nav-right-link.d-l-min
+          .collapse-nav-lv2.dropdown-menu.is-hidden
+            .wrapper-nav-l2
+              h6.collapse-header Login screens
+              a.collapse-item(href="#") Login
+              a.collapse-item(href="#") Register
+              a.collapse-item(href="#") Forgot Password
+              h6.collapse-header Other pages:
+              a.collapse-item(href="#") 404 Page
+              a.collapse-item(href="#") Blank Page
+          a(href="#").nav-link
+            .wrapper-nav-link
+              .icon-stats-dots.icon-nav-link
+              span Charts
+          a(href="#").nav-link
+            .wrapper-nav-link
+              .icon-table.icon-nav-link
+              span Tables    
+          // END components - Addons                     
+        li
+          +divier
+      .button-nav-side-wrapper
+        button.btn-aside
+          .icon-chevron-left.icon-btn-aside
+  // end aside bar
+  .content-wrapper
+    .nav-top-content
+      h1 hello content asdfsadf

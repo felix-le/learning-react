@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="bai tap 2"/>
+  <meta name="keywords" content="login form"/>
+  <meta name="author" content="vietanhle"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="assets/css/stylebt.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="wrapper-login">
+        <div class="logo-header">
+          <img src="assets/images/bt/logo.png" alt="logo Melon" title="Melon company">
+          <p><span>Me</span>lon</p>
+        </div>
+        <!-- Begin login box -->
+        <div class="login-box">
+          <h1 class="title-login-box">Sign in to your Account</h1>
+          <form method="POST"
+                onsubmit="submit()"
+                id="login-form">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="user-input" placeholder="User name">
+                  <div class="icon-user icon-form"></div>
+                </div>
+                <div class="form-group">
+                  <input type="password"
+                         class="form-control"
+                         id="password-input"
+                         placeholder="Password">
+                  <div class="icon-locked icon-form"></div>
+                </div>
+                <div class="form-login-check-btn">
+                  <div class="form-login-check">
+                    <input type="checkbox" class="form-login-check-input" id="input-check"/>
+                    <label for="input-check" class="form-login-check-label">Remember me</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Sign In &rsaquo;
+                  </button>
+                </div>
+          </form>
+        </div>
+        <!-- End login box -->
+        <!-- begin forgot password box -->
+        <div class="wrapper-fotgot">
+          <div class="content-forgot">
+            <div class="wrapper-icon-cross">
+              <div class="icon-cross"></div>
+            </div>
+            <div class="forgot-link close-collapse">
+              <a href="#">Forgot Password?</a>
+            </div>
+            <form action="" method="POST" class="forgot-pass-form hide-default" id="forgot-form">
+              <div class="form-group">
+                <input type="email" class="email-user-forgot" id="email-user-forgot" placeholder="Enter email address">
+                <div class="icon-envelope icon-form"></div>
+              </div>
+              <button type="submit" class="btn btn-reset-password">Reset your Password</button>
+            </form>
+            <div class="forgot-password-done hide-default">
+              <div class="icon-checkmark"></div>
+              <span>Great. We have sent  you an email</span>
+            </div>
+          </div>
+        </div>
+        <!-- end forgot password box -->
+      </div>
+    </div>
+  </div>
+  <!-- test content padding -->
+  <div class="box-test">
+    <p>hell world!</p>
+  </div>
+  <script src="assets/js/main.js"></script>
+
+</body>
+<footer>
+
+</footer>

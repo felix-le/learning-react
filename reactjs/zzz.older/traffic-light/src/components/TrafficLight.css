@@ -1,0 +1,4 @@
+.TrafficLight{
+  display: flex;
+  flex-direction: column;
+}

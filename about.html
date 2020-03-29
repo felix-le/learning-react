@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description"
+        content="Free Web tutorials">
+  <meta name="keywords"
+        content="HTML,CSS,XML,JavaScript">
+  <meta name="author"
+        content="John Doe">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1> this is about</h1>
+  <div>username: <span id="user-span"></span></div>
+  <button id="logout">logout</button>
+</body>
+<script>
+  var getuser = sessionStorage.getItem('username');
+  var btnLogout = document.getElementById('logout');
+  var displayUser = document.getElementById('user-span');
+  if (!getuser) {
+    window.location.href = 'login.html'
+  }
+  displayUser.innerHTML = getuser;
+  btnLogout.addEventListener('click', function () {
+    sessionStorage.removeItem("username");
+    window.location.href = 'login.html';
+  });
+
+</script>
+<footer>
+</footer>

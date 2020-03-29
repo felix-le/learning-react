@@ -1,0 +1,105 @@
+* 
+  outline: none !important
+  box-sizing: border-box !important
+
+html
+  position: relative
+  min-height: 100%
+  font-size: 80%
+
+body 
+  font-size: 1rem
+  font-weight: $font-weight-default
+  font-family: $font-body
+  line-height: 1.5
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: $color-body
+  background: $light
+  margin: 0
+  height: 100%
+  
+  // &.disable-scroll 
+  //   .body-wrapper 
+  //     width: 100%
+  //     height: 100vh
+
+
+
+.wrapper 
+  display: flex
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 
+  margin: 0
+  padding: 0
+  font-weight: $font-weight-bold
+  font-size: 3.5rem
+
+
+ul,
+li 
+  margin: 0
+  padding: 0
+  list-style: none
+
+
+img 
+  height: auto
+  width: auto
+  max-width: 100%
+
+
+p 
+  margin: 0 0 0.5rem 0
+  font-weight: $font-weight-regular
+
+
+a 
+  text-decoration: none
+  transition: color 0.3s $cubic3
+  font-size: 1.2rem
+
+
+.parallax-line-box 
+  margin-top: 2rem
+
+
+.parallax-switch-box 
+  margin-top: 4rem
+
+
+.error 
+  border-color: $color-pinterest !important
+  background: rgba(187, 15, 36, 0.1) !important
+
+
+.error-message 
+  color: $color-pinterest !important
+  font-style: italic
+
+
+.body-wrapper 
+  overflow: hidden
+
+
+
+
+.is-off 
+  display: none !important
+
+.bg-gradient-primary
+  background-color: #4e73df
+  background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%)
+  background-size: cover
+
+
+.d-l-min
+  display: none
+  @media screen and ( min-width: 768px  )
+    display: block
