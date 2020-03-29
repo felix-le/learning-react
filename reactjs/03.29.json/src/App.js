@@ -1,6 +1,7 @@
 import React from 'react';
 import CallApi from './features/CallApi'
-import './App.css';
+// import './App.css';
+import './css/style.css';
 import DetailItem from './features/DetailItem';
 import {
   BrowserRouter as Router,
@@ -14,21 +15,23 @@ function App() {
   
   return (
     <Router history={createBrowserHistory()}>
-    <div className="App">
-      <ul className="list-page">
-          <li>
-            <Link to="/detail-item">Detail Item</Link>
-        </li>
-          <li>
-            <Link to="/call-api">Call Api</Link>
-        </li>
-      </ul>
-        <Switch>
-          <Route exact path="/detail-item/:id" component={DetailItem} />
-          {/* Syntax ở đây để truyền tham số từ CallApi page  */}
-          <Route path="/call-api" component={CallApi} />
-          
-      </Switch>
+      <div className="App">
+        <div className="container">
+
+          <ul className="list-page">
+              <li>
+                <Link to="/detail-item">Detail Item</Link>
+            </li>
+              <li>
+                <Link to="/call-api">Call Api</Link>
+            </li>
+          </ul>
+            <Switch>
+              <Route exact path="/detail-item/:id" component={DetailItem} />
+              {/* Syntax ở đây để truyền tham số từ CallApi page  */}
+              <Route path="/call-api" component={CallApi} />
+          </Switch>
+        </div>
       </div>
     </Router>
   );

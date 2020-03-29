@@ -3,7 +3,7 @@ import React from 'react';
 const Button = (props) => {
 
   return (
-    <button onClick={props.handleClick}>Read More</button>
+    <button onClick={props.handleClick} className={`btn ${props.bgColor}`} >{props.nameBtn}</button>
   );
 };
 

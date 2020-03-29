@@ -19,7 +19,8 @@ const DetailItem = () => {
   return (
     <>
       {Object.keys(item).length > 0 ? (
-        <li key={item.id}>
+        <li key={item.id} className="well">
+          <h1>{item.id}</h1>
           <h3>{item.title}</h3>
           <p>{item.body}</p>
         </li>
@@ -30,10 +31,3 @@ const DetailItem = () => {
   );
 };
 export default DetailItem;
-// const numbers = {
-//   one: 1,
-//   two: 2
-// }
-
-// Object.keys(numbers);
-// // [ 'one', 'two' ]
