@@ -1,7 +1,6 @@
 import React from "react";
 
 function Excercise0303() {
-
   const bookList = [
     {
       title: "You are my sunshine",
@@ -32,10 +31,15 @@ function Excercise0303() {
 
   const Library = books => {
     return (
-      <div>
+      <div className="container">
         {bookList.length ? (
           bookList.map((item, i) => (
-            <Book key={i} title={item.title} author={item.author} pages={item.pages} />
+            <Book
+              key={i}
+              title={item.title}
+              author={item.author}
+              pages={item.pages}
+            />
           ))
         ) : (
           <div>No Thing Else</div>
