@@ -1,3 +1,6 @@
+
+json-server -p 4000 db.json
+
 https://github.com/typicode/json-server/issues/186
 
 ## Task 1: tui muon ra 1 trang detail de xem detail cua 1 item (item day la data cua posts) (edited) 
