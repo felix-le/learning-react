@@ -18,7 +18,7 @@ function Excercise0304() {
       pages: "300 pages"
     }
   ];
-  
+
   const Book = ({ title, author, pages }) => {
     return (
       <section>
@@ -28,32 +28,32 @@ function Excercise0304() {
       </section>
     );
   };
-  
 
 
-  class Library extends React.Component{
 
-
-    
-    render(props) {
-      var openState = false;
-      
-      this.componentDidUpdate = () => {
-        console.log(openState)
+  class Library extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        openState: false
       }
+    }
 
+    // cac lifecycle bat buoc fai viet o tren render.
+    // Need to help change value in openstate
+    handleChangeOpen = () => {
+      const { openState } = this.state;
+      this.setState({ openState: !openState })
+    }
 
-      // Need to help change value in openstate
-      const handleChangeOpen = () => {
-        openState = !openState;
-        console.log(openState)
-      }
-      // Need to help change value in openstate
+    render() {
+      const { openState } = this.state;
+      // neu cac function ve conditional, bien. Please write here.
+      const colorText = openState ? "red" : "blue";
+
       return (
-        <div className="container">
-          {/* // Need to help change value in openstate */}
-          {/* <h1>The library is {this.state.openState ? "Open" : "Close"}</h1> */}
-          {/* // Need to help change value in openstate */}
+        <div className={`container ${colorText}`}>  {/* template literal*/}
+          <h1>The library is <span>{openState ? "Open" : "Close"}</span></h1>
           {bookList.length ? (
             bookList.map((item, i) => (
               <Book
@@ -64,10 +64,10 @@ function Excercise0304() {
               />
             ))
           ) : (
-            <div>No Thing Else</div>
+              <div>No Thing Else</div>
             )}
-          <button className="btn btn-primary" onClick={handleChangeOpen}>Change</button>
-        </div>
+          <button className="btn btn-primary" onClick={this.handleChangeOpen}>Change</button>
+        </div >
       );
     }
   }
