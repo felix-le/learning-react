@@ -63,7 +63,7 @@ const CallApi = props => {
     });
     console.log(filterData)
   };
-// Bug to vai dai, Filter lỗi nhé. éo đỡ được , éo biết fix kakakak!~~~~~~~~~
+// Bug to vai dai, Filter lỗi nhé. éo đỡ được , éo biết fix kakakak!~~~~~~~~~ console thi duoc nhung ko render dc
 
 
   const handleSubmitSearch = event => {
