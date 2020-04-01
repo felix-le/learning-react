@@ -4,7 +4,7 @@ function ContactCardItem(props) {
   var { urlImg, name, phone, email } = props.contact;
   return (
     <div>
-      <div className="contact-card">
+      <div className="contact-card" key={innerHeight}>
         <img
           src={urlImg}
           alt=""

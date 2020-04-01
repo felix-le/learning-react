@@ -1,11 +1,13 @@
 import React from "react";
-import ContactCard from "./components/ContactCard";
+import Joke from "./components/Joke";
+// import ContactCard from "./components/ContactCard";
 
 
 function Props() {
   return (
     <div>
-      <ContactCard />
+      {/* <ContactCard /> */}
+      <Joke />
     </div>
   );
 }
