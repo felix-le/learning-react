@@ -1,21 +1,35 @@
 import React from "react";
+import ContactCardItem from "./ContactCardItem";
 
-function ContactCard(props) {
-  var { urlImg, name, phone, email } = props.contact;
+function ContactCard() {
   return (
     <div>
-      <div className="contact-card">
-        <img
-          src={urlImg}
-          alt=""
-          style={{ height: "auto", width: "300px" }}
-        />
-        <h3>{name}</h3>
-        <p>Phone: {phone}</p>
-        <p>Email: {email}</p>
-      </div>
+      <ContactCardItem
+        contact={{urlImg:"https://bit.ly/2wHlTPb",
+        name:"Mr. Whiskerson",
+        phone:"(212) 555-1234",
+        email:"Mrwhiskaz@catnap.meow"}}
+      />
+      <ContactCardItem
+        contact={{urlImg:"https://bit.ly/2QYoWsT",
+        name:"Mr. Whiskerson",
+        phone:"(212) 555-1234",
+        email:"Mrwhiskaz@catnap.meow"}}
+      />
+      <ContactCardItem
+        contact={{urlImg:"https://bit.ly/2UMwHDy",
+        name:"Mr. Whiskerson",
+        phone:"(212) 555-1234",
+        email:"Mrwhiskaz@catnap.meow"}}
+      />
+      <ContactCardItem
+        contact={{concacturlImg:"https://bit.ly/2UxlveX",
+        name:"Mr. Whiskerson",
+        phone:"(212) 555-1234",
+        email:"Mrwhiskaz@catnap.meow"}}
+      />
     </div>
-  );
+  )
 }
 
 export default ContactCard;
