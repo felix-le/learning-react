@@ -22,9 +22,9 @@ https://github.com/typicode/json-server/issues/186
 
 ## Task 3: Show loading when fetch data
 
+
+
 ## Task 4: search item do
-
-
 
 1. call item (Item)> detail item  = item.id
 2. detail item > call api follow id
@@ -37,3 +37,14 @@ c. Vô trang được điều hướng đến (detail item) - bắt tham số tr
 
 4. axios sẽ trả về url theo id
 5. id ở đây là biến có value = id item
+
+
+
+#  Task 4: make infinite scroll
+
+### Description
+hiển thị thêm item khi user scroll window vượt quá div chứa list item đó.
+
+### Flow
+- show giới hạn 10 item đầu tiên (call api 10 item)
+- check condition scroll: client-height (height cua window) + scrollTop (value dc sinh ra khi window scroll) >= scrollHeight (height cua container do)

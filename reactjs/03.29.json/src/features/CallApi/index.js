@@ -1,2 +1,2 @@
-import CallApiTwo from './CallApiTwo';
-export default CallApiTwo;
+import CallApiTwoTruong from './CallApiTwoTruong';
+export default CallApiTwoTruong;

@@ -3,40 +3,55 @@ import axios from "axios";
 
 // components
 import TodoItem from "./components/TodoItem";
-import UseInfiniteScroll from './components/UseInfiniteScroll'
 
 function CallApiTwo(props) {
   const [initialUser, setInitiaUser] = useState([]);
   const [visibleUsers, setVisibleUsers] = useState([]);
 
-  const [page, setPage] = useState(1);
-  const [limitRender, setLimitRender] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [limit] = useState(5);
 
   useEffect(() => {
     setTimeout(() => {
-      const fetchUsers = async () => {
-        const res = await axios.get(
-          "http://localhost:4000/posts?_limit=" + `${limitRender}`
-        );
-        setInitiaUser(res.data);
-        setVisibleUsers(res.data);
-      };
       fetchUsers();
-    }, 100);
-  }, []);
-  const moreData = () => {
-    setLimitRender(limitRender + 10);
-    setPage(page + 1)
-    setIsFetChing(false)
+    }, 1000)
+    const fetchUsers = async () => {
+      const res = await axios.get(
+        `http://localhost:4000/posts?_page=${currentPage}&_limit=${limit}`
+      );
+      setInitiaUser(res.data);
+      setVisibleUsers([...visibleUsers, ...res.data]);
+    };
 
-    setTimeout(() => {
-      console.log(page);
-      console.log(initialUser);
-      console.log(visibleUsers)
-    }, 110);
-  }
-  const [isFetching, setIsFetChing] = UseInfiniteScroll(moreData);
+  }, [currentPage]);
 
+  useEffect(() => {
+    function handleScroll() {
+      if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight) {
+        setCurrentPage(currentPage => currentPage + 1) //call back function
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // clean up function trong hook react: khi add 1 event listener thi vui long remove no khi roi` khoi component do (Eg: scroll...)
+    // neu ban ko remove thi no se lam ton' bo nho 
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  // const moreData = () => {
+  //   setLimitRender(limitRender + 10);
+  //   setPage(page + 1)
+  //   setIsFetChing(false)
+
+  //   setTimeout(() => {
+  //     console.log(page);
+  //     console.log(initialUser);
+  //     console.log(visibleUsers)
+  //   }, 110);
+  // }
 
 
 
