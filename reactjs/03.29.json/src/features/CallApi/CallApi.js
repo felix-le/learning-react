@@ -1,58 +1,41 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "../../components/Button";
-// import { createBrowserHistory } from 'history';
-// import { useHistory } from "react-router-dom";
-// import { Link } from "react-router-dom";
-/**
- * 
-1/ tim hieu json-server, ket hop vs react
-github: https://github.com/typicode/json-server
-package: https://www.npmjs.com/package/json-server
-2/ call api with axios
-3/ show list item
-4/ show detail of the item.
 
-Link Api: https://jsonplaceholder.typicode.com/posts
-
- */
-// 1/ task: tui muon ra 1 trang detail de xem detail cua 1 item
-// Khi console.log(res) hien thi data bt
-// Khi parse no ra thi bi loi??
 const CallApi = props => {
   const [initialUser, setInitialUser] = useState([]);
   const [visibleUser, setVisibleUser] = useState([]);
 
   useEffect(() => {
-    setTimeout(async () => {
+    
+    setTimeout( () => {
       const fetchUsers = async () => {
         const res = await axios.get("http://localhost:4000/posts");
         setInitialUser(res.data);
-        setVisibleUser(res.data)
+        setVisibleUser(res.data);
       };
       fetchUsers();
     }, 100);
   }, []);
 
-
-  const handleReadMoreItem = id => {
-    props.history.push(`/detail-item/${id}`);
+  const handleReadMoreItem = index => {
+    props.history.push(`/detail-item/${index}`);
   };
   // Truyền tham số trả về cho Components ở App.
-  const handleDeleteItem = id => {
-    const removeArr = visibleUser.filter(item => item.id !== id);
+  const handleDeleteItem = index => {
+    const removeArr = visibleUser.filter(item => item.index !== index);
     setVisibleUser(removeArr);
   };
 
-  // Bug to vai dai, Filter lỗi nhé. éo đỡ được , éo biết fix kakakak~~~~~~
   const handleSearchValue = event => {
     const { value } = event.target;
 
     const keyword = value.toLowerCase();
-    const filterUser = initialUser.filter(user => user.title.indexOf(keyword) !== -1);
-    setVisibleUser(filterUser)
+    const filterUser = initialUser.filter(
+      user => user.title.indexOf(keyword) !== -1
+    );
+    setVisibleUser(filterUser);
   };
-  // Bug to vai dai, Filter lỗi nhé. éo đỡ được , éo biết fix kakakak!~~~~~~~~~ console thi duoc nhung ko render dc
 
   return (
     <>
@@ -71,7 +54,7 @@ const CallApi = props => {
               <button
                 type="button"
                 className="btn btn-primary search-btn"
-              // onClick={handleSubmitSearch}
+                // onClick={handleSubmitSearch}
               >
                 <img src="https://md-aqil.github.io/images/Search.png" alt="" />
               </button>
@@ -81,21 +64,21 @@ const CallApi = props => {
       </div>
       <ul id="todoList">
         {visibleUser.length ? (
-          visibleUser.map(item => {
+          visibleUser.map((item, index) => {
             return (
-              <li key={item.id} className="well">
+              <li key={index} className="well">
                 <h3>
-                  {item.id} {item.title}{" "}
+                  {index} {item.title}
                 </h3>
                 <p>{item.body}</p>
                 <div className="buttonContainer">
                   <Button
-                    handleClick={() => handleReadMoreItem(item.id)}
+                    handleClick={() => handleReadMoreItem(index)}
                     nameBtn="Read More"
                     bgColor="btn-primary"
                   />
                   <Button
-                    handleClick={() => handleDeleteItem(item.id)}
+                    handleClick={() => handleDeleteItem(index)}
                     nameBtn="Delete"
                     bgColor="btn-danger"
                   />
@@ -104,8 +87,8 @@ const CallApi = props => {
             );
           })
         ) : (
-            <div className="spinner"></div>
-          )}
+          <div className="spinner"></div>
+        )}
       </ul>
     </>
   );

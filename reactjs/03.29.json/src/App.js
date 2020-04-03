@@ -1,8 +1,8 @@
 import React from 'react';
-import CallApi from './features/CallApi'
+import CallApiTwo from './features/callApi/'
 // import './App.css';
 import './css/style.css';
-import DetailItem from './features/DetailItem';
+import DetailItem from './features/detailItem';
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,8 +28,7 @@ function App() {
           </ul>
             <Switch>
               <Route exact path="/detail-item/:id" component={DetailItem} />
-              {/* Syntax ở đây để truyền tham số từ CallApi page  */}
-              <Route path="/call-api" component={CallApi} />
+              <Route path="/call-api" component={CallApiTwo} />
           </Switch>
         </div>
       </div>

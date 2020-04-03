@@ -6,7 +6,7 @@ import ProductItem from './components/ProductItem';
 function VSchoolProduct() {
 
   const ProducComponents = ProductData.map((item, i) => <ProductItem key={i} product={item} />)
-  console.log(ProducComponents)
+  // console.log(ProducComponents)
   return (
     <div>
       {ProducComponents}

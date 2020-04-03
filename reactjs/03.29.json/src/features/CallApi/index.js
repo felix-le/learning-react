@@ -1,2 +1,2 @@
-import CallApi from './CallApi';
-export default CallApi;
+import CallApiTwo from './CallApiTwo';
+export default CallApiTwo;

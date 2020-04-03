@@ -15,7 +15,7 @@ const DetailItem = () => {
       fetchUsers();
     }, 100);
   }, [id]);
-  
+
   return (
     <>
       {Object.keys(item).length > 0 ? (
@@ -24,9 +24,7 @@ const DetailItem = () => {
           <h3>{item.title}</h3>
           <p>{item.body}</p>
         </li>
-      ) : (null)
-
-      }
+      ) : null}
     </>
   );
 };

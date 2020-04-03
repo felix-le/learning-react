@@ -182,4 +182,26 @@ thằng con
               );
             })
           : null}
+
  -->
+
+ class components
+class Library extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        openState: false
+      }
+    }
+
+    // cac lifecycle bat buoc fai viet o tren render.
+    // Need to help change value in openstate
+    handleChangeOpen = () => {
+      const { openState } = this.state;
+      this.setState({ openState: !openState })
+    }
+
+    render() {
+      const { openState } = this.state;
+      // neu cac function ve conditional, bien. Please write here.
+      const colorText = openState ? "red" : "blue";

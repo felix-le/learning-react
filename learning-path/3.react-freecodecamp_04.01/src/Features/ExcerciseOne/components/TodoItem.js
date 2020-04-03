@@ -1,11 +1,12 @@
 import React from "react";
 
 function TodoItem(props) {
+  const {id, text, completed} = props.item
   return (
     <>
       <div className="form-group">
-        <input type="checkbox" id={props.id}/>
-        <label htmlFor={props.id} > Placeholder text here</label>
+        <input type="checkbox" id={id} checked={completed ? 'checked' : ''}/>
+        <label htmlFor={id} >{text}</label>
       </div>
     </>
   )
