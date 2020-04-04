@@ -185,7 +185,7 @@ thằng con
 
  -->
 
- class components
+ class  components
 class Library extends React.Component {
     constructor() {
       super();
