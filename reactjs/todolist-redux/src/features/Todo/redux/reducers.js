@@ -13,10 +13,18 @@ const reducers = (state = initialState, action) => {
         todos: [...state.todos, action.payload] //array descturing
       }
     }
+
+
+    // ------------------------------------------------------------------------------------------
     case TOGGLE_TODO:{
       return {
         ...state,
-        todos: state.todos.map(item => (item.id === action.payload.id) ? (state.isCompleted !== state.isCompleted) : (item.id) )
+        todos: state.todos.map(item => {
+          if (item.id === action.payload.id) {
+            item.isCompleted = !item.isCompleted;
+          }
+          return item;
+        })
       }
     }
 
@@ -26,7 +34,7 @@ const reducers = (state = initialState, action) => {
         todos: state.todos.filter(item => item.id !== action.payload.id)
       }
     }
-
+// ------------------------------------------------------------------------------------------
     default:
       return state;
   }
