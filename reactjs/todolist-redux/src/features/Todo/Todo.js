@@ -1,34 +1,27 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { connect } from 'react-redux';
 import "./css/TodoStyle.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
 // import actions
-import { addTodo } from './redux/actions';
+import { addTodo, toggleTodo,  removeTodo} from './redux/actions';
 
-const Todo = (props) => {
-  console.log('===Todo Component===', props);
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: "start",
-      isCompleted: false
-    }
-  ]);
-
+const Todo = ({ todos, addTodo, toggleTodo, removeTodo}) => {
+  // const [todos, setTodos] = useState([]);
   const _handleAddItemTodo = value => {
     if (value !== "") {
-      props.addTodo(value);
+      addTodo(value);
     }
   };
 
   const _handleCompleteTodo = id => {
-    console.log("===_handleCompleteTodo====", id)
+    // console.log("===_handleCompleteTodo====", id)
+    toggleTodo(id);
   }
 
   const _handleDeleteTodo = id => {
-    console.log("===_handleDeleteTodo====", id)
+    removeTodo(id)
   }
 
   const _handleClearTodo = id => {
@@ -44,7 +37,7 @@ const Todo = (props) => {
           handleClearTodo={_handleClearTodo}
         />
         <TodoList
-          todos={props.todos}
+          todos={todos}
           completedTodo={id => _handleCompleteTodo(id)}
           deleteTodo={id => _handleDeleteTodo(id)}
         />
@@ -57,14 +50,26 @@ const mapStateToProps = state => {
   const {
     todoReducers: { todos }
   } = state; //object destructuring
+  console.log("OUTPUT: state", state);
+  
+  const {
+    todoReducers: {isCompleted}
+  } = state;
+  const {
+    todoReducers: {removeTodo}
+  } = state;
 
   return {
-    todos
+    todos,
+    isCompleted,
+    removeTodo
   };
 }
 
 const mapDispatchToProps = {
-  addTodo
+  addTodo,
+  toggleTodo,
+  removeTodo
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todo);

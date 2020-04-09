@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../../components/Button";
 
 const TodoList = props => {
-  console.log('=====TodoList component===', props);
+  // console.log('=====TodoList component===', props);
   return (
     <>
       <ul id="todoList">
