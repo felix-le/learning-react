@@ -35,4 +35,5 @@ Ví dụ ngoặc tròn:
 ----
 Khi nào thì dùng import {...} Khi nào thì ko cần dùng
 
+Ví dụ: Button (Ko dùng), còn type phải dùng?
 
