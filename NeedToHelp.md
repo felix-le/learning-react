@@ -32,8 +32,15 @@ Ví dụ ngoặc tròn:
 
 /Users/vietanh/Documents/GitHub/react-redux-yt-codevolution/redux-demo/asyncActions.js
 
+
+==> luôn viết có ngoặc nhọn + return.
+
 ----
 Khi nào thì dùng import {...} Khi nào thì ko cần dùng
 
 Ví dụ: Button (Ko dùng), còn type phải dùng?
+
+import không co default thif dùng ngoặc nhọn. - Bắt buộc khi lấy xài ở component khác thì phải đúng tên cái hàm đó.
+
+epxport default --> Ko được có ngoặc nhọn + Khi import vô components khác thì đặt tên tùy ý.
 

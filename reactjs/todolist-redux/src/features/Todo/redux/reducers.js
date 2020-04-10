@@ -31,7 +31,7 @@ const reducers = (state = initialState, action) => {
     case REMOVE_TODO: {
       return{
         ...state,
-        todos: state.todos.filter(item => item.id !== action.payload.id)
+        todos: state.todos.filter(item => {return item.id !== action.payload.id})
       }
     }
 // ------------------------------------------------------------------------------------------
