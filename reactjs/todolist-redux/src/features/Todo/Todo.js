@@ -50,7 +50,6 @@ const mapStateToProps = state => {
   const {
     todoReducers: { todos }
   } = state; //object destructuring
-  console.log("OUTPUT: state", state);
   
   const {
     todoReducers: {isCompleted}

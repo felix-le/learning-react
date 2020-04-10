@@ -20,3 +20,19 @@ https://www.linkedin.com/learning/react-js-essential-training-3/using-setstate?u
 /Users/levietanh/Downloads/frontend-mc.vietanh/Learning-react-daily/Learning-React/learning-path/3.react-freecodecamp_04.01/src/Features/ExcerciseOne/components/TodoList.js
 
 
+**04/10**
+
+Trong hàm map thì khi nào trả về ngoặc tròn khi nào trả về ngoặc nhọn?
+
+Ví dụ ngoặc nhọn:
+
+/Users/vietanh/Documents/GitHub/learning-react/reactjs/todolist-redux
+
+Ví dụ ngoặc tròn:
+
+/Users/vietanh/Documents/GitHub/react-redux-yt-codevolution/redux-demo/asyncActions.js
+
+----
+Khi nào thì dùng import {...} Khi nào thì ko cần dùng
+
+
