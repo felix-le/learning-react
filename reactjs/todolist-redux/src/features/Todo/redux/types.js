@@ -1,3 +1,7 @@
-export const ADD_TODO = 'TODO/ADD_TODO';
-export const TOGGLE_TODO = 'TODO/TOGGLE_TODO';
-export const REMOVE_TODO = 'TODO/REMOVE_TODO';
+export const ADD_TODO = "TODO/ADD_TODO";
+export const TOGGLE_TODO = "TODO/TOGGLE_TODO";
+export const REMOVE_TODO = "TODO/REMOVE_TODO";
+
+export const FETCH_TODO_START = "TODO/FETCH_TODO_START";
+export const FETCH_TODO_SUCCESS = "TODO/FETCH_TODO_SUCCESS";
+export const FETCH_TODO_ERROR = "TODO/FETCH_TODO_ERROR";

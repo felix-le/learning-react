@@ -1,74 +1,82 @@
-import React, {useState} from "react";
-import { connect } from 'react-redux';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import "./css/TodoStyle.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
 // import actions
-import { addTodo, toggleTodo,  removeTodo} from './redux/actions';
+import { addTodo, toggleTodo, removeTodo, fetchTodos } from "./redux/actions";
 
-const Todo = ({ todos, addTodo, toggleTodo, removeTodo}) => {
+const Todo = ({
+  todos,
+  addTodo,
+  toggleTodo,
+  removeTodo,
+  fetchTodos,
+  error,
+  loading,
+}) => {
+  useEffect(() => {
+    fetchTodos();
+  }, []);
+
   // const [todos, setTodos] = useState([]);
-  const _handleAddItemTodo = value => {
+  const _handleAddItemTodo = (value) => {
     if (value !== "") {
       addTodo(value);
     }
   };
 
-  const _handleCompleteTodo = id => {
+  const _handleCompleteTodo = (id) => {
     // console.log("===_handleCompleteTodo====", id)
     toggleTodo(id);
-  }
+  };
 
-  const _handleDeleteTodo = id => {
-    removeTodo(id)
-  }
+  const _handleDeleteTodo = (id) => {
+    removeTodo(id);
+  };
 
-  const _handleClearTodo = id => {
-    console.log("===_handleClearTodo====")
-  }
+  const _handleClearTodo = (id) => {
+    console.log("===_handleClearTodo====");
+  };
 
   return (
     <>
       <h1>This is Todo page</h1>
       <div className="container">
         <TodoForm
-          handleAddItemTodo={value => _handleAddItemTodo(value)}
+          handleAddItemTodo={(value) => _handleAddItemTodo(value)}
           handleClearTodo={_handleClearTodo}
         />
+        {loading && <div>Please waiting ...</div>}
+        {error && <div>error fetch api...</div>}
         <TodoList
           todos={todos}
-          completedTodo={id => _handleCompleteTodo(id)}
-          deleteTodo={id => _handleDeleteTodo(id)}
+          completedTodo={(id) => _handleCompleteTodo(id)}
+          deleteTodo={(id) => _handleDeleteTodo(id)}
         />
       </div>
     </>
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const {
-    todoReducers: { todos }
+    todoReducers: { todos, error, loading },
   } = state; //object destructuring
-  
-  const {
-    todoReducers: {isCompleted}
-  } = state;
-  const {
-    todoReducers: {removeTodo}
-  } = state;
 
   return {
     todos,
-    isCompleted,
-    removeTodo
+    error,
+    loading,
   };
-}
+};
 
 const mapDispatchToProps = {
   addTodo,
   toggleTodo,
-  removeTodo
-}
+  removeTodo,
+  fetchTodos,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Todo);
