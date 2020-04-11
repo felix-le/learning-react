@@ -9,6 +9,7 @@ import {
 
 const initialState = {
   todos: [],
+  itemApi: [],
   loading: false,
   error: false,
 };
@@ -28,10 +29,17 @@ const reducers = (state = initialState, action) => {
         ...state,
         todos: state.todos.map((item) => {
           if (item.id === action.payload.id) {
-            item.isCompleted = !item.isCompleted;
+            item.completed = !item.completed;
           }
           return item;
         }),
+        itemApi: state.itemApi.map((item) => {
+          if (item.id === action.payload.id) {
+            item.completed = !item.completed;
+          }
+          return item;
+        }),
+
       };
     }
 
@@ -39,6 +47,9 @@ const reducers = (state = initialState, action) => {
       return {
         ...state,
         todos: state.todos.filter((item) => {
+          return item.id !== action.payload.id;
+        }),
+        itemApi: state.itemApi.filter((item) => {
           return item.id !== action.payload.id;
         }),
       };
@@ -55,7 +66,7 @@ const reducers = (state = initialState, action) => {
     case FETCH_TODO_SUCCESS: {
       return {
         ...state,
-        todos: action.payload.data,
+        itemApi: action.payload.data,
         loading: false,
       };
     }
@@ -74,7 +85,3 @@ const reducers = (state = initialState, action) => {
   }
 };
 export default reducers;
-
-// const completedTodos = [...todos];
-// completedTodos[index].isCompleted = !completedTodos[index].isCompleted;
-// setTodos(completedTodos);

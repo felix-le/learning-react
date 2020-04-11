@@ -15,6 +15,8 @@ const Todo = ({
   fetchTodos,
   error,
   loading,
+  itemApi
+  
 }) => {
   useEffect(() => {
     fetchTodos();
@@ -52,6 +54,7 @@ const Todo = ({
         {error && <div>error fetch api...</div>}
         <TodoList
           todos={todos}
+          itemApi={itemApi}
           completedTodo={(id) => _handleCompleteTodo(id)}
           deleteTodo={(id) => _handleDeleteTodo(id)}
         />
@@ -62,13 +65,14 @@ const Todo = ({
 
 const mapStateToProps = (state) => {
   const {
-    todoReducers: { todos, error, loading },
+    todoReducers: { todos, error, loading, itemApi },
   } = state; //object destructuring
 
   return {
     todos,
     error,
     loading,
+    itemApi
   };
 };
 

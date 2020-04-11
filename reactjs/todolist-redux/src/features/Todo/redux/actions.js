@@ -15,7 +15,7 @@ export const addTodo = (title) => ({
   payload: {
     id: Math.random(new Date()),
     title,
-    isCompleted: false,
+    completed: false,
   },
 });
 
