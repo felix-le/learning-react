@@ -5,6 +5,7 @@ import {
   FETCH_TODO_START,
   FETCH_TODO_SUCCESS,
   FETCH_TODO_ERROR,
+  SET_LOADING,
 } from "./types";
 
 const initialState = {
@@ -40,7 +41,7 @@ const reducers = (state = initialState, action) => {
           }
           return item;
         }),
-        loading: false
+        loading: false,
       };
     }
 
@@ -53,7 +54,7 @@ const reducers = (state = initialState, action) => {
         itemApi: state.itemApi.filter((item) => {
           return item.id !== action.payload.id;
         }),
-        loading: false
+        loading: false,
       };
     }
 
@@ -82,6 +83,13 @@ const reducers = (state = initialState, action) => {
     }
 
     // ------------------------------------------------------------------------------------------
+
+    case SET_LOADING: {
+      return {
+        ...state,
+        loading: action.payload,
+      };
+    }
     default:
       return state;
   }

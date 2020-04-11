@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList";
 
 // import actions
 import { addTodo, toggleTodo, removeTodo, fetchTodos } from "./redux/actions";
+import { SET_LOADING } from "./redux/types";
 
 const Todo = ({
   todos,
@@ -15,12 +16,11 @@ const Todo = ({
   fetchTodos,
   error,
   loading,
-  itemApi
-  
+  itemApi,
 }) => {
-  useEffect(() => {
-    fetchTodos();
-  }, []);
+  // useEffect(() => {
+  //   fetchTodos();
+  // }, []);
 
   // const [todos, setTodos] = useState([]);
   const _handleAddItemTodo = (value) => {
@@ -72,7 +72,7 @@ const mapStateToProps = (state) => {
     todos,
     error,
     loading,
-    itemApi
+    itemApi,
   };
 };
 

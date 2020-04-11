@@ -7,22 +7,25 @@ import {
   FETCH_TODO_START,
   FETCH_TODO_SUCCESS,
   FETCH_TODO_ERROR,
+  SET_LOADING,
 } from "./types";
 
 // import { apiFetchTodos } from '../api'; // way 1
 import * as api from "../api"; // way 2
 
-export const addTodo = (title) => ({
+const setLoading = (isLoading) => ({
+  type: SET_LOADING,
+  payload: isLoading,
+});
+
+const addTodoSuccess = (title) => ({
   type: ADD_TODO,
   payload: {
     id: Math.random(new Date()),
     title,
     completed: false,
-    loading: true
   },
 });
-
-
 
 export const toggleTodo = (id) => ({
   type: TOGGLE_TODO,
@@ -35,9 +38,17 @@ export const removeTodo = (id) => ({
   type: REMOVE_TODO,
   payload: {
     id,
-    loading: false
+    loading: false,
   },
 });
+
+export const addTodo = (title) => (dispatch) => {
+  dispatch(setLoading(true));
+  dispatch(addTodoSuccess(title));
+  setTimeout(() => {
+    dispatch(setLoading(false));
+  }, 500);
+};
 
 // const fetchTodosStart = () => ({
 //    type: FETCH_TODO_START,
