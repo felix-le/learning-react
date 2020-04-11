@@ -1,4 +1,7 @@
 export const ADD_TODO = "TODO/ADD_TODO";
+export const ADD_TODO_SUCCESS = "TODO/ADD_TODO_SUCCESS";
+export const ADD_TODO_ERROR = "TODO/ADD_TODO_ERROR";
+
 export const TOGGLE_TODO = "TODO/TOGGLE_TODO";
 export const REMOVE_TODO = "TODO/REMOVE_TODO";
 

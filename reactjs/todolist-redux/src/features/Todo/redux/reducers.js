@@ -20,6 +20,7 @@ const reducers = (state = initialState, action) => {
       return {
         ...state,
         todos: [...state.todos, action.payload], //array descturing
+        // loading: true
       };
     }
 
@@ -39,7 +40,7 @@ const reducers = (state = initialState, action) => {
           }
           return item;
         }),
-
+        loading: false
       };
     }
 
@@ -52,6 +53,7 @@ const reducers = (state = initialState, action) => {
         itemApi: state.itemApi.filter((item) => {
           return item.id !== action.payload.id;
         }),
+        loading: false
       };
     }
 

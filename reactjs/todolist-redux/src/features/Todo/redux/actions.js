@@ -1,5 +1,7 @@
 import {
   ADD_TODO,
+  ADD_TODO_ERROR,
+  ADD_TODO_SUCCESS,
   TOGGLE_TODO,
   REMOVE_TODO,
   FETCH_TODO_START,
@@ -16,8 +18,11 @@ export const addTodo = (title) => ({
     id: Math.random(new Date()),
     title,
     completed: false,
+    loading: true
   },
 });
+
+
 
 export const toggleTodo = (id) => ({
   type: TOGGLE_TODO,
@@ -30,6 +35,7 @@ export const removeTodo = (id) => ({
   type: REMOVE_TODO,
   payload: {
     id,
+    loading: false
   },
 });
 
