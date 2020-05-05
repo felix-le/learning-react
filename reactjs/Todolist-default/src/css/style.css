@@ -5,7 +5,8 @@
 /* Css Page */
 @import '_css_page/_loginpage.css';
 @import '_css_page/_registerpage.css';
-@import '_css_page/_todolistpage.css';
+/* @import '_css_page/_todolistpage.css'; */
+@import '_css_page/_homepage.css';
 
 
 /* Css Components */

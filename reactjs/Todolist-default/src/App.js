@@ -1,39 +1,14 @@
-import React from 'react';
-import './css/style.css';
-import HomePage from './components/HomePage';
-import LoginPage from './components/LoginPage';
-import RegisterPage from './components/RegisterPage';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import { createBrowserHistory } from 'history';
+import React from "react";
+import TodoList from "./features/TodoList/TodoList";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/style.css";
 function App() {
   return (
-    <Router history={createBrowserHistory()}>
-      <div className="App">
-        <h1>hello</h1>
-        <ul className="list-page">
-          <li>
-            <Link to="/">Home Page</Link>
-          </li>
-          <li>
-            <Link to="/login-page">Login Page</Link>
-          </li>
-          <li>
-            <Link to="/Register-Page">Register Page</Link>
-          </li>
-        </ul>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-          <Route path="/login-page" component={LoginPage} />
-          <Route path="/Register-Page" component={RegisterPage} />
-        </Switch>
-        
+    <div className="App">
+      <div className="container">
+        <TodoList />
       </div>
-    </Router>
+    </div>
   );
 }
 
